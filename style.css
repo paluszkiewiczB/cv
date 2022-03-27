@@ -1,183 +1,284 @@
 @page {
-  size: 210mm 297mm;
-  margin: 0;
+    size: 210mm 297mm;
+    margin: 0;
 }
 
-@media only screen {
-  .page-bleed {
-    position: absolute;
-    height: calc(29.7cm - .5cm);
-    width: calc(21cm - .5cm);
-    margin: .25cm;
-    border: 1px solid red;
-  }
-}
-
-body {
-  font-family: 'Fira Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeSpeed;
-  font-size: 10pt;
-  text-align: justify;
-  height: 29.7cm;
-  width: 21cm;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-@media only screen {
-  body {
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-  }
-}
-.header {
-  background-color: #81c784;
-  padding: .75rem;
-  padding-top: 1rem;
-}
-
-h1 {
-  font-family: 'Bitter', serif;
-}
-
-h1, h2, h3, h4 {
-  margin: 0;
+* {
+    font-family: Inter, serif;
 }
 
 p {
-  margin: 0;
+    margin: 0;
+}
+
+
+.root h2 {
+    display: none;
+}
+
+/*
+ gray background behind title
+*/
+div.root > div > .title {
+    margin-top: 12px;
+    background-color: #C4C4C4;
+    /*position: absolute;*/
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+/*
+  allows title to take full width
+*/
+body {
+    margin: 0;
+}
+
+div.work {
+    margin: 8px;
+}
+
+/*
+ images elements have size same as the content
+*/
+span.image {
+    display: contents;
+}
+
+/*
+ left title column
+*/
+
+div.title > div.content {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 6px;
+}
+
+.title .intro {
+    float: left;
+    flex: 7;
+    text-align: center;
+    padding: 0;
+    margin: 8px;
+}
+
+/*
+ right title column
+*/
+.title .contact {
+    float: left;
+    flex: 3;
+    text-align: center;
+}
+
+.title .intro .name {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.title .intro .role {
+    font-size: 28px;
+    font-weight: 450;
+}
+
+div .title .intro .content {
+    overflow: hidden;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+div .title .intro .role {
+    display: inline-block;
+}
+
+div .title .intro .role p {
+    position: relative;
+}
+
+/*
+  line on the left of the role
+*/
+div .title .intro .role p::before {
+    content: "";
+    width: 1000px;
+    left: 0;
+    top: 50%;
+    transform: translateX(-101%);
+    position: absolute;
+    border-bottom: 1px solid black;
+}
+
+/*
+  line on the right of the role
+*/
+div .title .intro .role p::after {
+    content: "";
+    width: 1000px;
+    right: 0;
+    top: 50%;
+    transform: translateX(101%);
+    position: absolute;
+    border-bottom: 1px solid black;
+}
+
+div.techs p {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 6px;
+}
+
+.tech.logo img {
+    vertical-align: middle;
+    height: 36px;
+    margin: 0 3px 0 3px;
+}
+
+div.contact > div.content {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+div.contact {
+    display: flex;
+    justify-content: center;
+}
+
+div.contact div.content {
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.contact.logo img {
+    vertical-align: middle;
+    height: 1.25rem;
+    margin-right: 0.2rem;
+}
+
+span.github img {
+    background: white;
+    border-radius: 1.25rem;
+}
+
+/*
+  disables styling for links
+*/
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+div.root div.body > div.content {
+    display: flex;
+    flex-direction: row;
+}
+
+div.body div.left {
+    flex: 7;
+    margin: 12px 12px 12px 24px;
+}
+
+div.body div.right {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+}
+
+div.body div.right > div.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.left .title, .right .title {
+    margin-top: 12px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+div.job > div.content, div.edu > div.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.job {
+    margin-top: 6px;
+}
+
+.body {
+    font-size: 14px
+}
+
+.left .dates {
+    flex: 3;
+    border-top: 1px solid black;
+    margin-right: 12px;
+    margin-top: 12px;
+    font-weight: 550;
+}
+
+.left .desc, .right .desc {
+    flex: 7;
+}
+
+.left .desc .subtitle {
+    padding-top: 3px;
+}
+
+.job .desc ul {
+    list-style: outside;
+    padding-left: 0;
+}
+
+dd {
+    margin: 0 0 12px;
+    padding: 0 0 0 6px;
 }
 
 ul {
-  margin: 0;
+    margin: 0 0 0 12px;
 }
 
-h1 {
-  text-align: center;
-  color: white;
+/*
+  separator between work experience and education
+*/
+#comarch::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: calc(70% - 60px);
+    border-bottom: 1px solid black;
 }
 
-.chronologie h2 {
-  text-transform: uppercase;
-  margin-top: .75rem;
-  font-size: 1.8em;
-  font-weight: 300;
+div.right {
+    position: relative;
+    border-left: 1px solid black;
+    padding-left: 12px;
+    margin: 12px 24px 12px 12px;
+
 }
 
-.chronologie h3 {
-  margin-top: 0.5rem;
-  font-size: 1.2em;
+.greenDot {
+    color: #46FF63;
 }
 
-.info h2 {
-  font-size: 2em;
-  text-align: center;
-  padding-top: 0.4cm;
-  padding-bottom: 0.4cm;
-  font-family: 'Bitter', serif;
+.right .dots tr {
+    line-height: 22px;
 }
 
-.info .contact {
-  text-align: center;
+.right .dots td:nth-child(2) {
+    font-size: 200%;
+    letter-spacing: -5px;
+    color: #C4C4C4
 }
 
-.info .contact a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.info h3 {
-  margin-top: 2rem;
-  font-size: .85em;
-}
-
-ul {
-  list-style-type: circle;
-  padding-left: 1.5rem;
-  font-size: 0.9em;
-  line-height: 12pt;
-}
-
-div.atouts {
-  padding-top: .5cm;
-  padding-bottom: .5cm;
-  margin-bottom: 1.5rem;
-}
-
-ul.atouts {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 1.15em;
-  font-weight: 200;
-  padding-top: 1rem;
-  border-top: 1pt solid grey;
-  padding-bottom: 1rem;
-  border-bottom: 1pt solid grey;
-}
-
-ul.atouts>li {
-  padding-right: 0.5rem;
-}
-
-ul.contact {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-#content {
-  display: flex;
-  height: 100%;
-}
-
-#content>.info {
-  width: calc(5.2cm - 0.6cm);
-  background-color: #efefef;
-  padding-left: 0.4cm;
-  padding-right: 0.2cm;
-  text-align: left;
-}
-
-#content>.chronologie {
-  width: calc(15.8cm - 0.6cm);
-  margin-left: 0.4cm;
-  margin-right: 0.2cm;
-  padding-bottom: 0.2cm;
-}
-
-.profil {
-  margin: auto;
-  display: block;
-}
-
-.profil>img {
-  max-width: 100%;
-  border-radius: 50%;
-  margin: auto;
-  display: block;
-  margin-top: .2cm;
-  margin-bottom: .2cm;
-}
-
-.footer {
-  height: 1cm;
-  background-color: #81c784;
-}
-
-span.picto {
-  vertical-align: middle;
-}
-
-span.picto>img {
-  height: .75rem;
-}
-
-span.picto.phone>img {
-  height: .75rem;
-  transform: scaleX(-1);
+/*
+  separator between langs and techs
+*/
+#techs, #tools, #interests, #pets {
+    margin-top: 12px;
+    border-top: 1px solid black;
 }
