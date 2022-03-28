@@ -85,11 +85,9 @@ Project::
 ======
 [.dates]
 =======
-01.2022 +
-Docaposte
-
-02.2021 - 12.2021 +
-Idemia R&D
+07.2020 - 01.2021 +
+07.2019 - 10.2019 +
+Comarch
 =======
 
 [.desc]
@@ -206,14 +204,14 @@ PET PROJECTS
 [.subtitle]
 *Speedtest* (in progress)
 
-Description: Measures speed of Internet connection and stores it in TSBD.
+Measures speed of Internet connection and stores it in TSBD. +
 Technologies: Go, InfluxDB, Prometheus, Docker
 
 
 [.subtitle]
 *Home server* (in progress)
 
-Description: Server for testing new tech
+Server for testing new tech. +
 Technologies: Ansible, Terraform, Kubernetes (k3s), ArgoCD, Postgres
 =======
 ======
