@@ -1,0 +1,29 @@
+on:
+  push:
+    branches: [ master ]
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build image
+        run: docker build . -t builder
+      - name: Generate PDF
+        run: |
+          docker run --name builder builder
+          docker cp builder:/home/node/src/cv.pdf .
+      - name: Bump version and push tag
+        id: tag
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          RELEASE_BRANCHES: master
+      - name: Create release
+        uses: marvinpinto/action-automatic-releases@v1.2.1
+        with:
+          title: ${{ steps.tag.outputs.new_tag }}
+          files: cv.pdf
+          prerelease: false
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: latest
