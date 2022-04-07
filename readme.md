@@ -1,7 +1,3 @@
-# README
-
-Generate `resume.html` and `resume.pdf` by invoking `asciidoctor-web-pdf` as shown below from the command-line:
-
-```console
-$ asciidoctor-web-pdf resume.adoc --template-require ./template.js
-```
+# CV
+This repository stores the source code of my CV.
+You can download the latest version in .pdf format from [here](https://github.com/paluszkiewiczB/cv/releases/download/latest/cv.pdf)
