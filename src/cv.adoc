@@ -218,15 +218,8 @@ Server for testing new tech.
 Technologies: Ansible, Terraform, Kubernetes (k3s), ArgoCD, Postgres
 =======
 ======
-
-[#updates]
-======
-[.title]
-UPDATES
-
-[.desc]
-https://www.github.com/paluszkiewiczB/cv/releases/download/latest/cv.pdf[Click here to download the newest version of this CV.]
-======
-
 =====
 ====
+
+[.footer]
+https://www.github.com/paluszkiewiczB/cv/releases/download/latest/cv.pdf[Click here to download the newest version of this CV. This is version: v0.0.0]

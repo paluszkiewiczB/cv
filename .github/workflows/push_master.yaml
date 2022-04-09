@@ -6,8 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Get next release version
+        id: get_next_tag
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          RELEASE_BRANCHES: master
+          DRY_RUN: true
       - name: Generate PDF
-        run: sh generate.sh
+        run: ./generate.sh ${{ steps.get_next_tag.outputs.new_tag}}
       - name: Bump version and push tag
         id: tag
         uses: anothrNick/github-tag-action@1.36.0
