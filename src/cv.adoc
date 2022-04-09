@@ -1,7 +1,7 @@
 [.root]
 == Bartosz Paluszkiewicz CV
 
-[.title]
+[.header]
 ====
 [.intro]
 =====

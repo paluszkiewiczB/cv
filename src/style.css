@@ -19,7 +19,7 @@ p {
 /*
  gray background behind title
 */
-div.root > div > .title {
+div.root > div > .header {
     margin-top: 12px;
     background-color: #C4C4C4;
     /*position: absolute;*/
@@ -50,13 +50,13 @@ span.image {
  left title column
 */
 
-div.title > div.content {
+div.header > div.content {
     display: flex;
     justify-content: space-evenly;
     margin: 6px;
 }
 
-.title .intro {
+.header .intro {
     float: left;
     flex: 7;
     text-align: center;
@@ -67,40 +67,40 @@ div.title > div.content {
 /*
  right title column
 */
-.title .contact {
+.header .contact {
     float: left;
     flex: 3;
     text-align: center;
 }
 
-.title .intro .name {
+.header .intro .name {
     font-size: 32px;
     font-weight: 700;
 }
 
-.title .intro .role {
+.header .intro .role {
     font-size: 28px;
     font-weight: 450;
 }
 
-div .title .intro .content {
+div .header .intro .content {
     overflow: hidden;
     margin-left: 12px;
     margin-right: 12px;
 }
 
-div .title .intro .role {
+div .header .intro .role {
     display: inline-block;
 }
 
-div .title .intro .role p {
+div .header .intro .role p {
     position: relative;
 }
 
 /*
   line on the left of the role
 */
-div .title .intro .role p::before {
+div .header .intro .role p::before {
     content: "";
     width: 1000px;
     left: 0;
@@ -113,7 +113,7 @@ div .title .intro .role p::before {
 /*
   line on the right of the role
 */
-div .title .intro .role p::after {
+div .header .intro .role p::after {
     content: "";
     width: 1000px;
     right: 0;
