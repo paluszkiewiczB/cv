@@ -276,9 +276,9 @@ div.right {
 }
 
 /*
-  separator between langs and techs
+  separators in right column
 */
-#techs, #tools, #interests, #pets {
+#techs, #tools, #interests, #pets, #updates {
     margin-top: 12px;
     border-top: 1px solid black;
 }

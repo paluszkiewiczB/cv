@@ -6,12 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build image
-        run: docker build . -t builder
       - name: Generate PDF
-        run: |
-          docker run --name builder builder
-          docker cp builder:/home/node/src/cv.pdf .
+        run: sh generate.sh
       - name: Bump version and push tag
         id: tag
         uses: anothrNick/github-tag-action@1.36.0
